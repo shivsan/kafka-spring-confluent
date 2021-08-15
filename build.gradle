@@ -1,19 +1,8 @@
-buildscript {
-	repositories {
-		jcenter()
-	}
-	dependencies {
-		classpath 'com.commercehub.gradle.plugin:gradle-avro-plugin:0.15.1'
-	}
-}
-
 plugins {
 	id 'org.springframework.boot' version '2.5.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-
 	id 'java'
 }
-apply plugin: 'com.commercehub.gradle.plugin.avro'
 apply plugin: 'idea'
 
 group = 'com.kafka'
@@ -23,22 +12,14 @@ sourceCompatibility = '11'
 
 repositories {
 	jcenter()
-
-	maven {
-		url 'https://packages.confluent.io/maven'
-	}
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.kafka:spring-kafka'
-	implementation 'org.apache.avro:avro'
-	implementation 'io.confluent:kafka-streams-avro-serde:5.4.0'
 
 	implementation 'org.apache.kafka:kafka-streams'
-	implementation 'org.springframework.kafka:spring-kafka'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.kafka:spring-kafka-test'
 }
 
 test {
