@@ -1,0 +1,14 @@
+{
+    "type": "record",
+    "name": "user",
+    "namespace": "com.kafka.kafkaexample.models",
+    "fields": [
+    {
+        "name": "name",
+        "type": "string"
+    },
+    {
+        "name": "age",
+        "type": "int"
+    }]
+}
